@@ -1,0 +1,17 @@
+def strReverse(st):
+    length = len(st)
+    spaces = [" "]
+    word = []
+
+    count = 0 
+
+    while count < length:
+        if st[count] not in spaces:
+            word_start = count
+            while count < length and st[count] not in  spaces:
+                count += 1
+            word.append(st[word_start:count])
+        count += 1
+    return " ".join(reversed(word))
+
+print(strReverse(" hello world "))
